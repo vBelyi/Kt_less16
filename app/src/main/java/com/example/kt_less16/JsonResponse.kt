@@ -4,7 +4,7 @@ data class GetResponse(
     var id: String,
     var name: String,
     var slug: String,
-    var powerstats: ArrayList<Powerstats> = arrayListOf(),
+    var powerstats: Powerstats,
     var appearance: Appearance,
     var biography: Biography,
     var work: Work,

@@ -2,11 +2,7 @@ package com.example.kt_less16
 import io.reactivex.rxkotlin.subscribeBy
 import android.app.Activity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.LinearLayout
-import android.widget.ListView
+
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,7 +23,8 @@ class MainActivity: Activity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({response->
                        if (response.isNotEmpty()) {
-                           val myAdapter = MyRecyclerViewAdapter(response, {})
+                           val items = response
+                           val myAdapter = MyRecyclerViewAdapter(items, {})
                            listView.adapter = myAdapter
                        }
             }, {error ->
